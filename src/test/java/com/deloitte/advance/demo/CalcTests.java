@@ -4,7 +4,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.deloitte.advance.sample.Calc;
@@ -23,6 +25,16 @@ public class CalcTests {
 	public static void tearDown() {
 		System.out.println("tearDown");
 		cal = null;
+	}
+
+	@BeforeEach
+	public void m1() {
+		System.out.println("once before eatch tet...");
+	}
+
+	@AfterEach
+	public void m2() {
+		System.out.println("once after eatch tet...");
 	}
 
 	@Test
