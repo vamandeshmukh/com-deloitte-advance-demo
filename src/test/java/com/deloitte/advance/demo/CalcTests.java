@@ -2,12 +2,18 @@ package com.deloitte.advance.demo;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import java.util.concurrent.TimeUnit;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
 
 import com.deloitte.advance.sample.Calc;
 
@@ -49,6 +55,7 @@ public class CalcTests {
 		assertNotEquals(cal.addNums(10, 20), 31);
 	}
 
+	@Disabled
 	@Test
 	public void testSubNums() {
 		System.out.println("testSubNums");
@@ -59,6 +66,22 @@ public class CalcTests {
 	public void testSubNums2() {
 		System.out.println("testSubNums2");
 		assertNotEquals(cal.subNums(10, 20), 15);
+	}
+
+	@Test
+	public void testDivNums() {
+		System.out.println("testDivNums");
+		assertThrows(ArithmeticException.class, () -> {
+			cal.divNums(10, 0);
+		});
+//		assertThrow
+	}
+
+	@Test
+	@Timeout(value = 2600, unit = TimeUnit.MILLISECONDS)
+	public void testPiValue() throws InterruptedException {
+		System.out.println("testPiValue");
+		assertEquals(cal.piValue(), 3.142);
 	}
 
 }
