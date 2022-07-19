@@ -20,7 +20,11 @@ public class App {
 		System.out.println("View all students :");
 
 		List<Student> studentList = dao.getAllStudents();
-		studentList.forEach(s -> System.out.println(s.toString()));
+
+		studentList.forEach((s) -> {
+			System.out.println(s.toString());
+			}
+		);
 
 		System.out.println("View student by roll no :");
 

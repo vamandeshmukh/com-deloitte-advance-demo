@@ -45,7 +45,7 @@ public class StudentDaoImpl implements StudentDao {
 	public List<Student> getAllStudents() {
 		List<Student> studentList = new ArrayList<>();
 		try {
-			Connection con = DriverManager.getConnection(url, user, password);
+			con = DriverManager.getConnection(url, user, password);
 			Statement st = con.createStatement();
 			ResultSet rs = st.executeQuery("SELECT * FROM student ORDER BY roll_no");
 			while (rs.next()) {
@@ -56,5 +56,4 @@ public class StudentDaoImpl implements StudentDao {
 		}
 		return studentList;
 	}
-
 }
