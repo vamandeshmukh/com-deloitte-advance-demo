@@ -21,6 +21,7 @@ public class JdbcDemo2 {
 		try (Connection con = DriverManager.getConnection(url, user, password);
 				Statement st = con.createStatement();
 				ResultSet rs = st.executeQuery(sql);) {
+
 			ResultSetMetaData rsmd = rs.getMetaData();
 
 			for (int i = 1; i <= rsmd.getColumnCount(); i++) {
@@ -33,9 +34,6 @@ public class JdbcDemo2 {
 				}
 				System.out.println();
 			}
-			con.close();
-			st.close();
-			rs.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
