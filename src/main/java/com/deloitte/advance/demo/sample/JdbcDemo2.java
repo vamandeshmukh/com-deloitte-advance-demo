@@ -1,4 +1,4 @@
-package com.deloitte.advance.demo;
+package com.deloitte.advance.demo.sample;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
