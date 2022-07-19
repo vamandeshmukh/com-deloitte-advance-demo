@@ -74,7 +74,6 @@ public class CalcTests {
 		assertThrows(ArithmeticException.class, () -> {
 			cal.divNums(10, 0);
 		});
-//		assertThrow
 	}
 
 	@Test

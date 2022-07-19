@@ -15,7 +15,6 @@ public class Calc {
 	}
 
 	public double piValue() throws InterruptedException {
-
 		Thread.sleep(2500);
 		return 3.142;
 
